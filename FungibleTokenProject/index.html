@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fungible Token Explorer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🪙 Fungible Token Explorer</h1>
+            <p>Manage and explore your token ecosystem</p>
+        </header>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Total Supply</h3>
+                <div class="stat-value" id="totalSupply">0</div>
+            </div>
+            <div class="stat-card">
+                <h3>Total Holders</h3>
+                <div class="stat-value" id="totalHolders">0</div>
+            </div>
+            <div class="stat-card">
+                <h3>Circulating</h3>
+                <div class="stat-value" id="circulating">0</div>
+            </div>
+        </div>
+
+        <div class="actions-section">
+            <h2>Token Actions</h2>
+            <div class="action-cards">
+                <div class="action-card">
+                    <h3>Mint Tokens</h3>
+                    <input type="text" id="mintAddress" placeholder="User Address" class="input-field">
+                    <input type="number" id="mintAmount" placeholder="Amount" class="input-field">
+                    <button onclick="mintTokens()" class="btn btn-primary">Mint</button>
+                </div>
+
+                <div class="action-card">
+                    <h3>Transfer Tokens</h3>
+                    <input type="text" id="fromAddress" placeholder="From Address" class="input-field">
+                    <input type="text" id="toAddress" placeholder="To Address" class="input-field">
+                    <input type="number" id="transferAmount" placeholder="Amount" class="input-field">
+                    <button onclick="transferTokens()" class="btn btn-secondary">Transfer</button>
+                </div>
+
+                <div class="action-card">
+                    <h3>Check Balance</h3>
+                    <input type="text" id="balanceAddress" placeholder="User Address" class="input-field">
+                    <button onclick="checkBalance()" class="btn btn-info">Check</button>
+                    <div id="balanceResult" class="result"></div>
+                </div>
+            </div>
+        </div>
+
+        <div class="explorer-section">
+            <h2>Token Explorer</h2>
+            <div class="explorer-controls">
+                <button onclick="refreshExplorer()" class="btn btn-outline">🔄 Refresh</button>
+                <input type="text" id="searchAddress" placeholder="Search by address..." class="search-input">
+                <button onclick="searchUser()" class="btn btn-outline">🔍 Search</button>
+            </div>
+            
+            <div class="table-container">
+                <table id="holdersTable">
+                    <thead>
+                        <tr>
+                            <th>Rank</th>
+                            <th>Address</th>
+                            <th>Balance</th>
+                            <th>Percentage</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="holdersTableBody">
+                        <!-- Dynamic content will be inserted here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="transaction-history">
+            <h2>Recent Transactions</h2>
+            <div id="transactionList" class="transaction-list">
+                <!-- Transaction history will be displayed here -->
+            </div>
+        </div>
+    </div>
+
+    <div id="notification" class="notification"></div>
+
+    <script src="token.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

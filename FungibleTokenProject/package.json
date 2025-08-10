@@ -1,0 +1,23 @@
+{
+  "name": "fungible-token-project",
+  "version": "1.0.0",
+  "description": "A complete web-based fungible token system with interactive explorer interface",
+  "main": "index.html",
+  "scripts": {
+    "start": "python -m http.server 8000",
+    "serve": "npx http-server -p 8000 -o"
+  },
+  "keywords": [
+    "token",
+    "blockchain",
+    "fungible",
+    "explorer",
+    "web3",
+    "javascript"
+  ],
+  "author": "Intern",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
